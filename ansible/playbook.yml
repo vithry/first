@@ -25,7 +25,15 @@
         #!/bin/bash
         echo "hello world - script => test2"
       mode: 0755
-      
+
+  - name: Add text to a file
+    blockinfile: 
+      state: present
+      insertafter: EOF
+      dest: "/opt/local/scripts/test1.sh"
+      content: |
+        #!/bin/bash
+        echo "hello world - script => test1"    
 
 
 
