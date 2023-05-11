@@ -27,9 +27,7 @@
       mode: 0755
 
   - name: Add text to a file
-    blockinfile: 
-      state: present
-      insertafter: EOF
+    lineinfile: 
       dest: "/opt/local/scripts/test1.sh"
       content: |
         #!/bin/bash
