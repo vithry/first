@@ -1,0 +1,17 @@
+---
+- name: First palybook
+  hosts: all
+  become: yes
+
+  tasks:
+
+  - name: Folders creation
+    file: 
+      path: "{{ item }}"
+      state: directory
+    loop:  
+      - /opt/local/scripts
+      - /opt/local/configs
+
+
+
