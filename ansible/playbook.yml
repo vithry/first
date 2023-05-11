@@ -1,0 +1,39 @@
+---
+- name: First palybook
+  hosts: all
+  become: yes
+
+  tasks:
+
+  - name: Folders creation
+    file: 
+      path: "{{ item }}"
+      state: directory
+    loop:  
+      - /opt/local/scripts
+      - /opt/local/configs
+
+  - name: Creating an empty file
+    file:
+      path: "/opt/local/scripts/test1.sh"
+      state: touch    
+
+  - name: Creating a file with content
+    copy:
+      dest: "/opt/local/scripts/test2.sh"
+      content: |
+        #!/bin/bash
+        echo "hello world - script => test2"
+      mode: 0755
+
+  - name: Add text to a file
+    lineinfile: 
+      dest: "/opt/local/scripts/test1.sh"
+      line: '{{ item }}'
+    with_items:
+    - '#!/bin/bash'
+    - '"hello world - script => test1"'
+
+
+
+
