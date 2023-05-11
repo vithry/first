@@ -31,7 +31,6 @@
       state: present
       insertafter: EOF
       dest: "/opt/local/scripts/test1.sh"
-      marker: "<!-- add services ANSIBLE MANAGED BLOCK -->"
       content: |
         #!/bin/bash
         echo "hello world - script => test1"    
