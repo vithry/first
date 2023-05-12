@@ -3,6 +3,9 @@
   hosts: all
   become: yes
 
+  vars:
+    script_name: "test3"
+
   tasks:
 
   - name: Folders creation
@@ -33,6 +36,9 @@
     with_items:
     - '#!/bin/bash'
     - 'echo "hello world - script => test1"'
+
+  - name: Generate file with template
+    template: src=templates/example.j2 dest=/opt/local/scripts/{{ script_name }}.sh
 
 
 
