@@ -13,6 +13,7 @@
         update_cache: yes
       vars:
         packages:
+        - net-tools
         - apt-transport-https
         - ca-certificates
         - curl
