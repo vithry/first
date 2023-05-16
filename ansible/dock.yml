@@ -3,5 +3,19 @@
   hosts: all
   become: yes
 
+  vars:
+    source_folder: ~/vagrant/first/
+
   roles:
     - docker_install
+
+  tasks:
+  - name: Copy Site Folder
+    copy:
+      src: "{{source_folder}}/site"
+      dest: "{{ansible_user_dir}}"
+
+  - name: Copy docker-compose file
+    copy:
+      src: "{{source_folder}}/docker-compose.yml"
+      dest: "{{ansible_user_dir}}"
