@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
   test1.vm.box = "ubuntu/focal64"
   test1.vm.hostname = "test1"
 
+  test1.vm.network "public_network", bridge: "wlp3s0", ip: "192.168.31.20"
   test1.vm.network :private_network, ip: "192.168.56.101"
 
   test1.vm.provider "virtualbox" do |v|
@@ -18,6 +19,7 @@ Vagrant.configure("2") do |config|
   test2.vm.box = "ubuntu/focal64"
   test2.vm.hostname = "test2"
 
+  test2.vm.network "public_network", bridge: "wlp3s0", ip: "192.168.31.30"
   test2.vm.network :private_network, ip: "192.168.56.102"
 
   test2.vm.provider "virtualbox" do |v|
