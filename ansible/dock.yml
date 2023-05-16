@@ -4,7 +4,8 @@
   become: yes
 
   vars:
-    source_folder: ~/vagrant/first/
+    source_folder: ~/vagrant/first
+    ansible_user_dir: /home/vagrant
 
   roles:
     - docker_install
@@ -14,8 +15,14 @@
     copy:
       src: "{{source_folder}}/site"
       dest: "{{ansible_user_dir}}"
+      owner: vagrant
+      group: vagrant
+      mode: '0644'
 
   - name: Copy docker-compose file
     copy:
       src: "{{source_folder}}/docker-compose.yml"
       dest: "{{ansible_user_dir}}"
+      owner: vagrant
+      group: vagrant
+      mode: '0644'
