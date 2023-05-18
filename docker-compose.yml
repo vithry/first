@@ -7,6 +7,6 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./site:/usr/share/nginx/html
-      - ./site/config/nginx.conf:/etc/nginx/nginx.conf
-      - ./site/config/conf.d:/etc/nginx/conf.d
+      - ./site/html:/usr/share/nginx/html
+      - ./site/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./site/nginx/conf.d:/etc/nginx/conf.d
