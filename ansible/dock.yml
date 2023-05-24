@@ -13,7 +13,7 @@
   tasks:
   - name: Copy Site Folder
     copy:
-      src: "{{source_folder}}/site"
+      src: "{{source_folder}}/webserver"
       dest: "{{ansible_user_dir}}"
       owner: vagrant
       group: vagrant
