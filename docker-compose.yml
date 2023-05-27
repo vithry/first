@@ -5,7 +5,7 @@ services:
     image: nginx
     container_name: web
     ports:
-      - "8080:80"
+      - "80:80"
     volumes:
       - ./webserver/html:/usr/share/nginx/html
       - ./webserver/nginx/nginx.conf:/etc/nginx/nginx.conf
